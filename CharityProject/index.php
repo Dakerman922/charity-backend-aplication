@@ -11,7 +11,7 @@ $params = explode('/',$q);
 $type = $params[0];
 $id = $params[1];
 
-if($type){
+if($type === 'volounteers'){
     if(isset($id)){
         getVolounteer($conn,$id);
     }
