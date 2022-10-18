@@ -24,10 +24,6 @@
         }      
         ?>
         <h2>Table from Mysql</h2>
-        <form method = "post">
-            <input type="hidden" name = "ShowTable">
-            <button type="submit" onclick="ShowData()">Show Table</button>
-        </form>
         <table>
             <tr>
                 <th>ID</th>
