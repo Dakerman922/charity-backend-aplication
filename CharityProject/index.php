@@ -37,7 +37,7 @@
                 <th>Date and time of departure</th>    
             </tr>
             <?php
-            $sql = "SELECT * FROM volonteer_info";
+            $sql = "SELECT Volounteer ID,FIO,Telephone number,Arrival location,Target destination,Car description,Capacity,Booked,Date and time of departure FROM volonteer_info";
             $result = mysqli_query($conn,$sql);
             if($result){
                 while($row = mysqli_fetch_assoc($result)){
