@@ -1,4 +1,5 @@
 <?php
+session_start();
 $host="us-cdbr-east-06.cleardb.net";
 $port=3306;
 $socket="";

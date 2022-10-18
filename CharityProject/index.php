@@ -3,6 +3,7 @@
 <html>
     <head>
         <?php
+        session_start();
         try{
             require_once 'ConnectToDB.php';
         }
@@ -41,6 +42,7 @@
                 <th>Date and time of departure</th>    
             </tr>
             <?php
+            session_start();
             $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info";
             $result = mysqli_query($conn,$sql);
             if($result-> num_rows > 0){
