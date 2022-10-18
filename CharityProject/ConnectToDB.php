@@ -1,10 +1,11 @@
 <?php
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$host="us-cdbr-east-06.cleardb.net";
+$port=3306;
+$socket="";
+$user="b2646ca55e38e5";
+$password="";
+$dbname="";
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-
-$conn = new mysqli($server, $username, $password, $db);
+$conn = new mysqli($host, $user, $password, $dbname, $port, $socket)
+	or die ('Could not connect to the database server' . mysqli_connect_error());
 ?>
