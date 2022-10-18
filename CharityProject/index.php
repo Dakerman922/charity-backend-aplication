@@ -58,6 +58,5 @@
             }
             mysqli_close($conn);
             ?>
-        </table>
     </body>
 </html>
