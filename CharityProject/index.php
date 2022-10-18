@@ -26,7 +26,7 @@ switch($method){
         break;
     }
     case 'POST':{
-        if($id === 'сreate'){
+        if($id === 'Create' && $type === 'volounteers'){
             addVolounteer($conn,$_POST);
         }
     }
