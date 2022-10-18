@@ -42,7 +42,7 @@
             </tr>
             <?php
             session_start();
-            $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info";
+            $sql = "SELECT * FROM volonteer_info";
             $result = mysqli_query($conn,$sql);
             if($result-> num_rows > 0){
                 while($row = $result->fetch_assoc){
