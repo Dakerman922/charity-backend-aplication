@@ -44,7 +44,7 @@
             $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info";
             $result = mysqli_query($con,$sql);
             if($result-> num_rows > 0){
-                while($row = mysqli_fetch_array($result)){
+                while($row = $result->fetch_assoc()){
                     echo "<tr>";
                     echo "<td>".$row["Volounteer ID"]."</td><td>".$row["FIO"]."</td><td>".$row["Telephone number"]."</td>";
                     echo "<td>".$row["Arrival location"]."</td><td>".$row["Target destination"]."</td><td>".$row["Car description"]."</td>";
