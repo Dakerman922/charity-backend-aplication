@@ -4,14 +4,20 @@ header("Content-type: json/application");
 
 require 'ConnectToDB.php';
 
-$volounteers = mysqli_query($conn,"SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info");
+$type = $_GET['q'];
 
-$volounteers_list = [];
+if($type === 'volounteers'){
+    $volounteers = mysqli_query($conn,"SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info");
 
-while($volounteer = mysqli_fetch_assoc($volounteers)){
-    $volounteers_list[] = $volounteer;
+    $volounteers_list = [];
+
+    while($volounteer = mysqli_fetch_assoc($volounteers)){
+        $volounteers_list[] = $volounteer;
+    }
+
+    echo json_encode($volounteers_list);
 }
 
-echo json_encode($volounteers_list)
+
 
 ?>
