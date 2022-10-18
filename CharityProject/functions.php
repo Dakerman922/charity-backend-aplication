@@ -50,5 +50,19 @@ function addVolounteer($conn,$data){
 
 }
 
+function deleteVolounteer($conn,$id){
+    $volounteer = mysqli_query($conn, "DELETE FROM heroku_00fb7a2965fdb12.volonteer_info WHERE VolounteerID = '$id'");
+    
+    http_response_code(200);
+    
+    $res = [
+        "status" => true,
+        "message" => "volounteer is deleted" 
+    ];
+    echo json_encode($res);
+    $volounteer = mysqli_fetch_assoc($volounteer);
+    echo json_encode($volounteer);
+    
+}
 
 ?>

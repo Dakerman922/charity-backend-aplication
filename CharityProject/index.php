@@ -30,6 +30,13 @@ switch($method){
             addVolounteer($conn,$_POST);
         }
     }
+    case 'DELETE':{
+        if($type === 'volounteers'){
+            if($id){
+                deleteVolounteer($conn,$id);
+            }
+        }
+    }
 }
 
 
