@@ -37,7 +37,6 @@
                 <th>Date and time of departure</th>    
             </tr>
             <?php
-            session_start();
             $sql = "SELECT * FROM volonteer_info";
             $result = mysqli_query($conn,$sql);
             if($result-> num_rows > 0){
