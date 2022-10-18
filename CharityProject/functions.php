@@ -16,6 +16,7 @@ function getVolounteer($conn,$id){
     $volounteer = mysqli_query($conn, "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info WHERE VolounteerID = '$id'");
 
     if(mysqli_num_rows($volounteer) === 0){
+        http_response_code(404);
         $res = [
             "status" => false,
             "message" => "Volounteer not found" 
