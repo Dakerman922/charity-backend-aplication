@@ -41,7 +41,7 @@
                 <th>Date and time of departure</th>    
             </tr>
             <?php
-            $sql = "SELECT * FROM helpwheel.volonteer_info;";
+            $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info;";
             $result = mysqli_query($con,$sql);
             if($result-> num_rows > 0){
                 while($row = mysqli_fetch_array($result)){
