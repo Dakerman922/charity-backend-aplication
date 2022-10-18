@@ -1,58 +1,60 @@
+<?php
+include("volounteers.php");
+?>
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <?php
-        try{
-            require_once 'ConnectToDB.php';
-        }
-        catch(Exception $ex){
-            $error = $ex->getMessage();
-        }
-        ?>
-        <meta charset="UTF-8">
-        <title>Testing</title>
-    </head>
-    <body>
-        <h1>Testing Mysql Connection</h1>
-        <?php
-        if(isset($error)){
-            echo "<p>$error</p>";
-        }
-        else{
-            echo "<p>Connected</p>";
-        }      
-        ?>
-        <h2>Table from Mysql</h2>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>FIO</th>
-                <th>Teleplhone Number</th>
-                <th>Arrival location</th>
-                <th>Target Destination</th>
-                <th>Car Description</th>
-                <th>Capacity</th>
-                <th>Booked</th>
-                <th>Date and time of departure</th>    
-            </tr>
-            <?php
-            $sql = "SELECT Volounteer ID,FIO,Telephone number,Arrival location,Target destination,Car description,Capacity,Booked,Date and time of departure FROM volonteer_info";
-            $result = mysqli_query($conn,$sql);
-            if($result){
-                while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr>";
-                    echo "<td>".$row["Volounteer ID"]."</td><td>".$row["FIO"]."</td><td>".$row["Telephone number"]."</td>";
-                    echo "<td>".$row["Arrival location"]."</td><td>".$row["Target destination"]."</td><td>".$row["Car description"]."</td>";
-                    echo "<td>".$row["Capacity"]."</td><td>".$row["Booked"]."</td><td>".$row["Date and time of departure"]."</td>";
-                    echo "</tr>";
-                }
-                echo "</table>";
-            }
-            else{
-                echo "0 result";
-            }
-            mysqli_close($conn);
-            ?>
-    </body>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+ <div class="row">
+   <div class="col-sm-8">
+    <?php echo $deleteMsg??''; ?>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+       <thead><tr>
+            <th>ID</th>
+            <th>FIO</th>
+            <th>Teleplhone Number</th>
+            <th>Arrival location</th>
+            <th>Target Destination</th>
+            <th>Car Description</th>
+            <th>Capacity</th>
+            <th>Booked</th>
+            <th>Date and time of departure</th>    
+    </thead>
+    <tbody>
+  <?php
+      if(is_array($fetchData)){      
+      $sn=1;
+      foreach($fetchData as $data){
+    ?>
+      <tr>
+      <td><?php echo $sn; ?></td>
+      <td><?php echo $data['FIO']??''; ?></td>
+      <td><?php echo $data['Telephone number']??''; ?></td>
+      <td><?php echo $data['Arrival location']??''; ?></td>
+      <td><?php echo $data['Target destination']??''; ?></td>
+      <td><?php echo $data['Car description']??''; ?></td>
+      <td><?php echo $data['Capacity']??''; ?></td>
+      <td><?php echo $data['Booked']??''; ?></td>
+      <td><?php echo $data['Date and time of departure']??''; ?></td>    
+     </tr>
+     <?php
+      $sn++;}}else{ ?>
+      <tr>
+        <td colspan="9">
+    <?php echo $fetchData; ?>
+  </td>
+    <tr>
+    <?php
+    }?>
+    </tbody>
+     </table>
+   </div>
+</div>
+</div>
+</div>
+</body>
 </html>
