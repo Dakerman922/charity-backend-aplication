@@ -3,7 +3,6 @@
 <html>
     <head>
         <?php
-        session_start();
         try{
             require_once 'ConnectToDB.php';
         }
