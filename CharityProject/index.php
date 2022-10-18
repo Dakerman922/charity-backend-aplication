@@ -39,7 +39,7 @@
             <?php
             $sql = "SELECT * FROM volonteer_info";
             $result = mysqli_query($conn,$sql);
-            if($result-> num_rows > 0){
+            if($result){
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>";
                     echo "<td>".$row["Volounteer ID"]."</td><td>".$row["FIO"]."</td><td>".$row["Telephone number"]."</td>";
