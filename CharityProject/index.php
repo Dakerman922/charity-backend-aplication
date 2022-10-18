@@ -42,7 +42,7 @@
             </tr>
             <?php
             $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info";
-            $result = mysqli_query($con,$sql);
+            $result = mysqli_query($conn,$sql);
             if($result-> num_rows > 0){
                 while($row = $result->fetch_assoc){
                     echo "<tr>";
@@ -56,7 +56,7 @@
             else{
                 echo "0 result";
             }
-            mysqli_close($con);
+            mysqli_close($conn);
             ?>
         </table>
     </body>
