@@ -41,7 +41,7 @@
                 <th>Date and time of departure</th>    
             </tr>
             <?php
-            $sql = "SELECT * FROM volonteer_info";
+            $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info";
             $result = mysqli_query($con,$sql);
             if($result-> num_rows > 0){
                 while($row = $result->fetch_assoc()){
