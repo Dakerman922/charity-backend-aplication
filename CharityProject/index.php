@@ -25,6 +25,15 @@
         }      
         ?>
         <h2>Table from Mysql</h2>
+        <?php
+        $sql = "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info";
+        $result = mysqli_query($conn,$sql);
+        if($result){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<p>".$row[0]."</p>";
+            }
+        }
+        ?>
         <table class="table">
             <thead>
                 <tr>
