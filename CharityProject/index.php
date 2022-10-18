@@ -12,9 +12,13 @@ $type = $params[0];
 $id = $params[1];
 
 if($type === 'volounteers'){
-    getVolounteers($conn);
+    if(isset($id)){
+        getVolounteer($conn,$id);
+    }
+    else{
+        getVolounteers($conn);
+    }
+    
 }
-
-
 
 ?>
