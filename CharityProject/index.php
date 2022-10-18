@@ -46,7 +46,7 @@
                 if($result){
                     while($row = mysqli_fetch_assoc($result)){
                         echo "<tr>";
-                        echo "<p>".$row["Volounteer ID"]."<p><td>".$row["FIO"]."</td><td>".$row["Telephone number"]."</td>";
+                        echo "<td>".$row["Volounteer ID"]."</td><td>".$row["FIO"]."</td><td>".$row["Telephone number"]."</td>";
                         echo "<td>".$row["Arrival location"]."</td><td>".$row["Target destination"]."</td><td>".$row["Car description"]."</td>";
                         echo "<td>".$row["Capacity"]."</td><td>".$row["Booked"]."</td><td>".$row["Date and time of departure"]."</td>";
                         echo "<td> <a class='btn btn-primary btn-sm' href='update'>Update</a> </td>";
