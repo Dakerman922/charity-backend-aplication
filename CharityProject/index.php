@@ -37,10 +37,11 @@
                 <th>Date and time of departure</th>    
             </tr>
             <?php
+            $connection = mysqli_connect('us-cdbr-east-06.cleardb.net', 'b2646ca55e38e5', '96f9b044'); //The Blank string is the password
             $sql = "SELECT * FROM volonteer_info";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($connection,$sql);
             if($result){
-                while($row = mysqli_fetch_assoc($result)){
+                while($row = mysqli_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>".$row["Volounteer ID"]."</td><td>".$row["FIO"]."</td><td>".$row["Telephone number"]."</td>";
                     echo "<td>".$row["Arrival location"]."</td><td>".$row["Target destination"]."</td><td>".$row["Car description"]."</td>";
