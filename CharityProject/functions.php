@@ -28,6 +28,7 @@ function getVolounteer($conn,$id){
 }
 
 function addVolounteer($conn,$data){
+    $i = 5;
     $id = $data['VolounteerID'];
     $fio = $data['FIO'];
     $phoneNumber = $data['TelephoneNumber'];
@@ -37,7 +38,8 @@ function addVolounteer($conn,$data){
     $capacity = $data['Capacity'];
     $booked = $data['Booked'];
     $dateAndTime = $data['DateAndTimeOfDeparture'];
-    mysqli_query($conn,"INSERT INTO heroku_00fb7a2965fdb12.volonteer_info VALUES (NULL,'$fio','$phoneNumber',' $arrivalLocation','$targetDestination','$carDescription','$capacity','$booked','$dateAndTime')");
+    $i += 1;
+    mysqli_query($conn,"INSERT INTO heroku_00fb7a2965fdb12.volonteer_info VALUES ($i,'$fio','$phoneNumber',' $arrivalLocation','$targetDestination','$carDescription','$capacity','$booked','$dateAndTime')");
     
     http_response_code(201);
     
