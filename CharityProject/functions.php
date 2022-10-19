@@ -8,7 +8,7 @@ function getVolounteers($conn){
         $volounteers_list[] = $volounteer;
     }
 
-    echo json_encode($volounteers_list);
+    echo json_encode($volounteers_list, JSON_UNESCAPED_UNICODE);
 }
 
 function getVolounteer($conn,$id){
@@ -23,7 +23,7 @@ function getVolounteer($conn,$id){
         echo json_encode($res);
     }else{
         $volounteer = mysqli_fetch_assoc($volounteer);
-        echo json_encode($volounteer);
+        echo json_encode($volounteer, JSON_UNESCAPED_UNICODE);
     }
 }
 
@@ -46,7 +46,7 @@ function addVolounteer($conn,$data){
         "volounteer_id" => mysqli_insert_id($conn) 
     ];
 
-    echo json_encode($res);
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
 
 }
 
@@ -64,7 +64,7 @@ function addEscaper($conn,$data){
         "escaper_id" => mysqli_insert_id($conn)
     ];
 
-    echo json_encode($res);
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
 }
 
 function deleteVolounteer($conn,$id){
@@ -76,7 +76,7 @@ function deleteVolounteer($conn,$id){
         "status" => true,
         "message" => "volounteer is deleted" 
     ];
-    echo json_encode($res);
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
 }
 
 function getGoogleAddressCoordinates()
@@ -105,5 +105,5 @@ function getGoogleAddressCoordinates()
             $coordinates->valid_address  = TRUE;
         else
             $coordinates->valid_address  = FALSE;
-        echo json_encode($coordinates);
+        echo json_encode($coordinates, JSON_UNESCAPED_UNICODE);
     }
