@@ -1,11 +1,11 @@
 <?php
 
-header("Content-type: json/application");
-
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: token, Content-Type');
 header('Access-Control-Allow-Methods: POST, GET, DELETE,');
 header('Access-Control-Allow-Credentials: true');
+
+header("Content-type: json/application");
 
 require 'ConnectToDB.php';
 require 'functions.php';
