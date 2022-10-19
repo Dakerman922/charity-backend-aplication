@@ -57,7 +57,7 @@ function addEscaper($conn,$data){
     $booked = $data['BookedPlaces'];
     mysqli_query($conn, "INSERT INTO heroku_00fb7a2965fdb12.escaper_info VALUES (NULL, '$fio','$phoneNumber','$booked'");
 
-    http_response_code(200);
+    http_response_code(201);
 
     $res = [
         "status" => true,
