@@ -27,7 +27,7 @@ function getVolounteer($conn,$id){
     }
 }
 
-function addVolounteer($conn,$data){
+/*function addVolounteer($conn,$data){
     $id = $data['VolounteerID'];
     $fio = $data['FIO'];
     $phoneNumber = $data['TelephoneNumber'];
@@ -48,7 +48,7 @@ function addVolounteer($conn,$data){
 
     echo json_encode($res);
 
-}
+}*/
 
 function deleteVolounteer($conn,$id){
     $volounteer = mysqli_query($conn, "DELETE FROM heroku_00fb7a2965fdb12.volonteer_info WHERE VolounteerID = '$id'");
