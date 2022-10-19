@@ -32,8 +32,9 @@ switch($method){
     }
     case 'POST':{
         if($id === 'Create' && $type === 'volounteers'){
-            //addVolounteer($conn,$_POST);
+            addVolounteer($conn,$_POST);
         }
+        break;
     }
     case 'DELETE':{
         if($type === 'volounteers'){
@@ -41,6 +42,10 @@ switch($method){
                 deleteVolounteer($conn,$id);
             }
         }
+        break;
+    }
+    default:{
+        echo json_encode("Something went wrong :0");
     }
 }
 
