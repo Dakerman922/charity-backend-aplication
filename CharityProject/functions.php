@@ -50,6 +50,23 @@ function addVolounteer($conn,$data){
 
 }
 
+function addEscaper($conn,$data){
+    $id = $data['ID'];
+    $fio = $data['FIO'];
+    $phoneNumber = $data['TelephoneNumber'];
+    $booked = $data['BookedPlaces'];
+    mysqli_query($conn, "INSERT INTO heroku_00fb7a2965fdb12.escaper_info VALUES (NULL, '$fio','$phoneNumber','$booked'");
+
+    http_response_code(200);
+
+    $res = [
+        "status" => true,
+        "escaper_id" => mysqli_insert_id($conn)
+    ];
+
+    echo json_encode($res);
+}
+
 function deleteVolounteer($conn,$id){
     $volounteer = mysqli_query($conn, "DELETE FROM heroku_00fb7a2965fdb12.volonteer_info WHERE VolounteerID = '$id'");
     

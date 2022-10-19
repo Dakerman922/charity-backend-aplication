@@ -34,6 +34,9 @@ switch($method){
         if($id === 'Create' && $type === 'volounteers'){
             addVolounteer($conn,$_POST);
         }
+        else if ($id === 'Create' && $type === 'escaper'){
+            addEscaper($conn,$_POST);
+        }
         break;
     }
     case 'DELETE':{
@@ -44,6 +47,7 @@ switch($method){
         }
         break;
     }
+
     default:{
         echo json_encode("Something went wrong :0");
     }
