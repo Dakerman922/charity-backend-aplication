@@ -1,6 +1,7 @@
 <?php
 
 function getVolounteers($conn){
+    mysqli_set_charset($conn, 'utf8');
     $volounteers = mysqli_query($conn,"SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info");
     $volounteers_list = [];
 
@@ -12,6 +13,7 @@ function getVolounteers($conn){
 }
 
 function getVolounteer($conn,$id){
+    mysqli_set_charset($conn, 'utf8');
     $volounteer = mysqli_query($conn, "SELECT * FROM heroku_00fb7a2965fdb12.volonteer_info WHERE VolounteerID = '$id'");
 
     if(mysqli_num_rows($volounteer) === 0){
@@ -28,6 +30,7 @@ function getVolounteer($conn,$id){
 }
 
 function addVolounteer($conn,$data){
+    mysqli_set_charset($conn, 'utf8');
     $id = $data['VolounteerID'];
     $fio = $data['FIO'];
     $phoneNumber = $data['TelephoneNumber'];
@@ -51,6 +54,7 @@ function addVolounteer($conn,$data){
 }
 
 function addEscaper($conn,$data){
+    mysqli_set_charset($conn, 'utf8');
     $id = $data['ID'];
     $fio = $data['FIO'];
     $phoneNumber = $data['TelephoneNumber'];
@@ -68,6 +72,7 @@ function addEscaper($conn,$data){
 }
 
 function deleteVolounteer($conn,$id){
+    mysqli_set_charset($conn, 'utf8');
     $volounteer = mysqli_query($conn, "DELETE FROM heroku_00fb7a2965fdb12.volonteer_info WHERE VolounteerID = '$id'");
     
     http_response_code(200);
