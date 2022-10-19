@@ -34,7 +34,7 @@ switch($method){
         if($id === 'Create' && $type === 'volounteers'){
             addVolounteer($conn,$_POST);
         }
-        else if ($id === 'Create' && $type === 'escaper'){
+        if ($id === 'Create' && $type === 'escaper'){
             addEscaper($conn,$_POST);
         }
         break;
