@@ -78,3 +78,32 @@ function deleteVolounteer($conn,$id){
     ];
     echo json_encode($res);
 }
+
+function getGoogleAddressCoordinates()
+    {
+        //using the google maps api to get the long and lat coordinates of addresss
+        //using form post variables
+        $address =trim($_POST['address']);
+        $city = trim($_POST['city']);
+        $state = trim($_POST['state']);
+
+        //formats the address add '+' into space
+        $address = str_replace( ' ', '+' ,$address);
+        $city = str_replace( ' ', '+', $city);
+        $address = preg_replace("[^A-Za-z0-9]", '+', $address ); //remove non alpha numeric chars such as extra spaces.
+        $address_str = $address.',+'. $city.',+'.$state;
+        $geo_url = "http://maps.google.com/maps/api/geocode/json?address=$address_str&sensor=false";
+        //echo $geo_url;
+        //echo file_get_contents($geo_url);
+        $json_result = json_decode(file_get_contents($geo_url));
+
+        $geo_result =  $json_result->results[0];
+        $coordinates = $geo_result->geometry->location;
+
+        //see if the it is locating the real address or just apox location, or in most cases a bad address
+        if($geo_result->types[0] == 'street_address')
+            $coordinates->valid_address  = TRUE;
+        else
+            $coordinates->valid_address  = FALSE;
+        echo json_encode($coordinates);
+    }
