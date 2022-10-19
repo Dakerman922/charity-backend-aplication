@@ -60,9 +60,6 @@ function deleteVolounteer($conn,$id){
         "message" => "volounteer is deleted" 
     ];
     echo json_encode($res);
-    $volounteer = mysqli_fetch_assoc($volounteer);
-    echo json_encode($volounteer);
-    
 }
 
 ?>
