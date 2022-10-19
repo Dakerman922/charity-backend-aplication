@@ -18,7 +18,7 @@ $params = explode('/',$q);
 $type = $params[0];
 $id = $params[1];
 
-switch($method){
+/*switch($method){
     case 'GET':{
         if($type === 'volounteers'){
             if(isset($id)){
@@ -48,6 +48,6 @@ switch($method){
         echo json_encode("Something went wrong :0");
     }
 }
-
+*/
 
 ?>
