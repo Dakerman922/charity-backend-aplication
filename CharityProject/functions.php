@@ -78,5 +78,3 @@ function deleteVolounteer($conn,$id){
     ];
     echo json_encode($res);
 }
-
-?>

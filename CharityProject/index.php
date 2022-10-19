@@ -52,6 +52,3 @@ switch($method){
         echo json_encode("Something went wrong :0");
     }
 }
-
-
-?>
