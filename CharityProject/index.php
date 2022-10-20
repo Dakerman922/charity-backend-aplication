@@ -29,9 +29,6 @@ switch($method){
                 getVolounteers($conn);
             }
         }
-        if($type === 'gmap'){
-            getGoogleAddressCoordinates();
-        }
         break;
     }
     case 'POST':{
